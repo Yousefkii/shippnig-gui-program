@@ -115,11 +115,31 @@ namespace shpnnig_company
             database db = new database();
             if (db.check(username_text.Text, password_text.Text) == 0)
             {
-                
+                Username.Visible = false;
+                password.Visible = false;
+                password_text.Size = new Size(0, 0);
+                username_text.Size = new Size(0, 0);
+                login.Size = new Size(0, 0);
+                sign_up.Size = new Size(0, 0);
+
+                welcome.Location = new Point(50,20);
+                welcome.AutoSize = true;
+                welcome.Text = $"welcome {username_text.Text}!...";
+                welcome.Font = new Font("Arial", 28);
             }
             if (db.check(username_text.Text, password_text.Text) == 1)
             {
-                
+                Username.Visible = false;
+                password.Visible = false;
+                password_text.Size = new Size(0, 0);
+                username_text.Size = new Size(0, 0);
+                login.Size = new Size(0, 0);
+                sign_up.Size = new Size(0, 0);
+
+                welcome.Location = new Point(50,20);
+                welcome.AutoSize = true;
+                welcome.Text = $"welcome {username_text.Text}!...";
+                welcome.Font = new Font("Arial", 28);
             }
         }
     }
