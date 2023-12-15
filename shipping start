@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace shpnnig_company
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Form1_Load(sender, e, AutoSize);
+        }
+
+        private void Form1_Load(object sender, EventArgs e, bool autoSize)
+        {
+            Label Username = new Label();
+            Label password = new Label();
+            TextBox username_text = new TextBox();
+            TextBox password_text = new TextBox();
+            Button login = new Button();
+            Button sign_up = new Button();
+
+            this.Size = new Size(1000, 600);
+            this.Text = "unitron";
+
+            this.Controls.Add(Username);
+            this.Controls.Add(password);
+            this.Controls.Add(login);
+            this.Controls.Add(sign_up);
+            this.Controls.Add(username_text);
+            this.Controls.Add(password_text);
+
+            Username.Location = new Point(300,100);
+            Username.AutoSize = true;
+            Username.Text = "user name";
+            Username.Font = new Font("Arial", 24, FontStyle.Bold);
+
+            password.Location = new Point(300, 150);
+            password.AutoSize = true;
+            password.Text = " password";
+            password.Font = new Font("Arial", 24, FontStyle.Bold);
+
+            username_text.Location = new Point(550,110);
+            username_text.Size = new Size(160,35);
+            username_text.Multiline = true;
+
+            password_text.Location = new Point(550, 160);
+            password_text.Size = new Size(160, 35);
+            password_text.Multiline = true;
+        }
+    }
+}
