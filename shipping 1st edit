@@ -1,0 +1,126 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace shpnnig_company
+{
+    class database
+    {
+        string[] usern = new string [10];
+        string[] userp = new string[10];
+        int top = -1;
+
+        public void add(string name,string pass )
+        {
+            ++top;
+            usern[top] = name;
+            userp[top] = pass;
+        }
+        public int check(string name, string pass)
+        {
+            for (int i = 0; i <= top; i++)
+            {
+                if (name == usern[i])
+                {
+                    for (int j = 0; j <= top; j++)
+                    {
+                        if (pass == userp[j])
+                        {
+                            return 1;
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
+    }
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Form1_Load(sender, e, AutoSize);
+        }
+        Label Username = new Label();
+        Label password = new Label();
+        TextBox username_text = new TextBox();
+        TextBox password_text = new TextBox();
+        Button login = new Button();
+        Button sign_up = new Button();
+        private void Form1_Load(object sender, EventArgs e, bool autoSize)
+        {
+            
+
+            this.Size = new Size(1000, 600);
+            this.Text = "unitron";
+
+            this.Controls.Add(Username);
+            this.Controls.Add(password);
+            this.Controls.Add(login);
+            this.Controls.Add(sign_up);
+            this.Controls.Add(username_text);
+            this.Controls.Add(password_text);
+
+            Username.Location = new Point(300,100);
+            Username.AutoSize = true;
+            Username.Text = "user name";
+            Username.Font = new Font("Arial", 24, FontStyle.Bold);
+
+            password.Location = new Point(300, 150);
+            password.AutoSize = true;
+            password.Text = " password";
+            password.Font = new Font("Arial", 24, FontStyle.Bold);
+
+            username_text.Location = new Point(550,110);
+            username_text.Size = new Size(160,35);
+            username_text.Multiline = true;
+
+            password_text.Location = new Point(550, 160);
+            password_text.Size = new Size(160, 35);
+            password_text.Multiline = true;
+
+            login.Location = new Point(450,280);
+            login.Size = new Size(100,40);
+            login.Text = "login";
+            login.Font = new Font("Arial",20);
+            login.Click += new EventHandler(login_click);
+
+            sign_up.Location = new Point(450,370);
+            sign_up.Size = new Size(100, 40);
+            sign_up.Text = "sign up";
+            sign_up.Font = new Font("Arial", 20);
+            sign_up.Click += new EventHandler(sign_click);
+        }
+
+        private void sign_click(object sender, EventArgs e)
+        {
+            //login.Size=new Size(0,0);
+            database db = new database();
+            db.add(username_text.Text, password_text.Text);
+        }
+
+        private void login_click(object sender, EventArgs e)
+        {
+            database db = new database();
+            if (db.check(username_text.Text, password_text.Text) == 0)
+            {
+                
+            }
+            if (db.check(username_text.Text, password_text.Text) == 1)
+            {
+                
+            }
+        }
+    }
+}
