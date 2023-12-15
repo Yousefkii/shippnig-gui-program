@@ -13,9 +13,10 @@ namespace shpnnig_company
 {
     class database
     {
-        string[] usern = new string [10];
-        string[] userp = new string[10];
+        public string[] usern = new string [10];
+        public string[] userp = new string[10];
         int top = -1;
+
 
         public void add(string name,string pass )
         {
@@ -27,20 +28,21 @@ namespace shpnnig_company
         {
             for (int i = 0; i <= top; i++)
             {
-                if (name == usern[i])
+                if (name == usern[i] && pass == userp[i])
                 {
-                    for (int j = 0; j <= top; j++)
-                    {
-                        if (pass == userp[j])
-                        {
-                            return 1;
-                        }
-                    }
+                    return 1;
+                    //for (int j = i; j <= top; j++)
+                    //{
+                    //    if (pass == userp[j])
+                    //    {
+                    //        return 1;
+                    //    }
+                    //}
                 }
             }
             return 0;
         }
-    }
+    }  
     public partial class Form1 : Form
     {
         public Form1()
@@ -54,10 +56,16 @@ namespace shpnnig_company
         }
         Label Username = new Label();
         Label password = new Label();
+        Label welcome = new Label();
+        Label choice = new Label();
+        Label uni = new Label();
         TextBox username_text = new TextBox();
         TextBox password_text = new TextBox();
         Button login = new Button();
         Button sign_up = new Button();
+        Button files = new Button();
+        Button backage = new Button();
+
         private void Form1_Load(object sender, EventArgs e, bool autoSize)
         {
             
@@ -71,9 +79,19 @@ namespace shpnnig_company
             this.Controls.Add(sign_up);
             this.Controls.Add(username_text);
             this.Controls.Add(password_text);
+            this.Controls.Add(welcome);
+            this.Controls.Add(choice);
+            this.Controls.Add(files);
+            this.Controls.Add(backage);
+            this.Controls.Add(uni);
 
             BackColor = Color.Navy;
             ForeColor = Color.OldLace;
+
+            uni.Location = new Point(300,0);
+            uni.AutoSize = true;
+            uni.Text = "with unitron, you kick and we deliver";
+            uni.Font = new Font("Arial",15);
 
             Username.Location = new Point(300,100);
             Username.AutoSize = true;
@@ -82,6 +100,7 @@ namespace shpnnig_company
 
             password.Location = new Point(300, 150);
             password.AutoSize = true;
+            password.Visible = true;
             password.Text = " password";
             password.Font = new Font("Arial", 24, FontStyle.Bold);
 
@@ -108,18 +127,45 @@ namespace shpnnig_company
 
         private void sign_click(object sender, EventArgs e)
         {
-            //login.Size=new Size(0,0);
             BackColor = Color.Navy;
             ForeColor = Color.OldLace;
-
             database db = new database();
             db.add(username_text.Text, password_text.Text);
-                Username.Visible = false;
-                password.Visible = false;
-                password_text.Size = new Size(0, 0);
-                username_text.Size = new Size(0, 0);
-                login.Size = new Size(0, 0);
-                sign_up.Size = new Size(0, 0);
+            username_text.Text = "";
+            password_text.Text = "";
+            MessageBox.Show("now try to login");
+
+            //Username.Visible = false;
+            //password.Visible = false;
+            //password_text.Size = new Size(0, 0);
+            //username_text.Size = new Size(0, 0);
+            //login.Size = new Size(0, 0);
+            //sign_up.Size = new Size(0, 0);
+
+            //welcome.Location = new Point(50, 20);
+            //welcome.AutoSize = true;
+            //welcome.Text = $"welcome {username_text.Text}!...";
+            //welcome.Font = new Font("Arial", 28);
+
+            //choice.Location = new Point(250,150);
+            //choice.AutoSize = true;
+            //choice.Text = "what to kick !??...";
+            //choice.Font = new Font("Arial",22);
+
+            //files.Location = new Point(350, 250);
+            //files.AutoSize = true;
+            //files.Visible = true;
+            //files.Text = "files";
+            //files.Font = new Font("Arial", 20);
+            //files.Click += new EventHandler(files_click);
+
+            //backage.Location = new Point(450,250);
+            //backage.AutoSize = true;
+            //backage.Visible = true;
+            //backage.Text = "backage";
+            //backage.Font = new Font("Arial", 20);
+            //backage.Click += new EventHandler(backage_click);
+
         }
 
         private void login_click(object sender, EventArgs e)
@@ -127,19 +173,8 @@ namespace shpnnig_company
             database db = new database();
             if (db.check(username_text.Text, password_text.Text) == 0)
             {
-                BackColor = Color.Navy;
-                ForeColor = Color.OldLace;
-                Username.Visible = false;
-                password.Visible = false;
-                password_text.Size = new Size(0, 0);
-                username_text.Size = new Size(0, 0);
-                login.Size = new Size(0, 0);
-                sign_up.Size = new Size(0, 0);
+                MessageBox.Show("sorry you need to have an account first");
 
-                welcome.Location = new Point(50,20);
-                welcome.AutoSize = true;
-                welcome.Text = $"welcome {username_text.Text}!...";
-                welcome.Font = new Font("Arial", 28);
             }
             if (db.check(username_text.Text, password_text.Text) == 1)
             {
@@ -152,11 +187,39 @@ namespace shpnnig_company
                 login.Size = new Size(0, 0);
                 sign_up.Size = new Size(0, 0);
 
-                welcome.Location = new Point(50,20);
+                welcome.Location = new Point(50, 20);
                 welcome.AutoSize = true;
                 welcome.Text = $"welcome {username_text.Text}!...";
                 welcome.Font = new Font("Arial", 28);
+
+                choice.Location = new Point(250, 150);
+                choice.AutoSize = true;
+                choice.Text = "what to kick !??...";
+                choice.Font = new Font("Arial", 22);
+
+                files.Location = new Point(350, 250);
+                files.AutoSize = true;
+                files.Text = "files";
+                files.Font = new Font("", 20);
+                files.Click += new EventHandler(files_click);
+
+                backage.Location = new Point(450, 250);
+                backage.AutoSize = true;
+                backage.Visible = true;
+                backage.Text = "backage";
+                backage.Font = new Font("Arial", 20);
+                backage.Click += new EventHandler(backage_click);
             }
+        }
+
+        private void files_click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void backage_click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
