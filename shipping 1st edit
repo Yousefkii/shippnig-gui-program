@@ -56,10 +56,11 @@ namespace WindowsFormsApp2
                 this.Package.TabIndex = 11;
                 this.Package.Text = "Package";
                 this.Package.UseVisualStyleBackColor = true;
+                file.Visible = true;
                 this.File.AutoSize = true;
                 this.File.Font = new System.Drawing.Font("Segoe UI Historic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.File.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-                this.File.Location = new System.Drawing.Point(530, 625);
+                this.File.Location = new System.Drawing.Point(336, 209);
                 this.File.Name = "File";
                 this.File.Size = new System.Drawing.Size(130, 41);
                 this.File.TabIndex = 0;
@@ -119,6 +120,17 @@ namespace WindowsFormsApp2
                 package.Text = "Package";
                 package.UseVisualStyleBackColor = true;
                 package.Click += new EventHandler(package_click);
+                file.Visible = true;
+                this.File.AutoSize = true;
+                this.File.Font = new System.Drawing.Font("Segoe UI Historic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.File.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+                this.File.Location = new System.Drawing.Point(336, 209);
+                this.File.Name = "File";
+                this.File.Size = new System.Drawing.Size(130, 41);
+                this.File.TabIndex = 0;
+                this.File.Text = "File";
+                this.File.UseVisualStyleBackColor = true;
+                this.File.Click += new System.EventHandler(this.file_Click);
             }
             else
             {
