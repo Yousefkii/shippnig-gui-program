@@ -46,6 +46,16 @@ namespace WindowsFormsApp2
                 label3.Location = new Point(0, 0);
                 clickhere_button.Size = new Size(0, 0);
                 clickhere_button.Location = new Point(0, 0);
+  this.Controls.Add(this.textBox9);
+  this.Controls.Add(this.textBox8);
+  this.Controls.Add(this.textBox7);
+  this.Controls.Add(this.textBox6);
+  this.Controls.Add(this.label10);
+  this.Controls.Add(this.label9);
+  this.Controls.Add(this.label8);
+  this.Controls.Add(this.label7);
+  this.Controls.Add(this.pictureBox1);
+  this.Controls.Add(this.Continue);
             }
         }
 
