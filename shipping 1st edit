@@ -406,6 +406,28 @@ namespace WindowsFormsApp2
             file.Visible = false;
             choice.Visible = false;
             package.Location = new Point(647, 53);
+              private void Package_Click(object sender, EventArgs e)
+  {
+      this.Controls.Add(this.radioButton2);
+      this.Controls.Add(this.radioButton1);
+      this.Controls.Add(this.label2);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.label4);
+      this.Controls.Add(this.label6);
+      this.Controls.Add(this.label5);
+      this.Controls.Add(this.comboBox1);
+      this.Controls.Add(this.Continue);
+      this.Controls.Add(this.textBox4);
+      this.Controls.Add(this.textBox3);
+      this.Controls.Add(this.textBox2);
+      this.Controls.Add(this.textBox11);
+      this.Controls.Add(this.Continue);
+      this.Controls.Add(this.comboBox2);
+      this.Controls.Add(this.label11);
+      File.Visible = false;
+      Package.Visible = false;
+
+  }
         }
             
         }
