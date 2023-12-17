@@ -141,6 +141,24 @@ namespace WindowsFormsApp2
                 MessageBox.Show("you have to write the same password");
             }
             
+        private void file_Click(object sender, EventArgs e)
+        {
+            filespic.Visible = false;
+            packagepic.Visible = false;
+            package.Visible = false;
+            choice.Visible = false;
+            file.Location = new System.Drawing.Point(326, 53);
+        }
+
+        private void package_click(object sender, EventArgs e)
+        {
+            filespic.Visible = false;
+            packagepic.Visible = false;
+            file.Visible = false;
+            choice.Visible = false;
+            package.Location = new Point(647, 53);
+        }
+            
         }
     }
     class database
