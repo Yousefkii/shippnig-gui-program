@@ -108,6 +108,17 @@ namespace WindowsFormsApp2
                 label3.Location = new Point(0, 0);
                 clickhere_button.Size = new Size(0, 0);
                 clickhere_button.Location = new Point(0, 0);
+                package.Visible = true;
+                package.AutoSize = true;
+                package.Font = new Font("Segoe UI Historic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                package.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+                package.Location = new Point(647,209);
+                package.Name = "Package";
+                package.Size = new Size(130, 41);
+                package.TabIndex = 11;
+                package.Text = "Package";
+                package.UseVisualStyleBackColor = true;
+                package.Click += new EventHandler(package_click);
             }
             else
             {
