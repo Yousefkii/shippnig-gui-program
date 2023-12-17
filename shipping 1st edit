@@ -280,7 +280,125 @@ namespace WindowsFormsApp2
    this.radioButton2.UseVisualStyleBackColor = true;
    this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
         }
+        
+           private void Continue_Click(object sender, EventArgs e)
+   {
+       this.Controls.Add(this.textBox9);
+       this.Controls.Add(this.textBox8);
+       this.Controls.Add(this.textBox7);
+       this.Controls.Add(this.textBox6);
+       this.Controls.Add(this.label10);
+       this.Controls.Add(this.label9);
+       this.Controls.Add(this.label8);
+       this.Controls.Add(this.label7);
+       this.Controls.Add(this.pictureBox1);
+       textBox11.Visible = false;
 
+       Continue.Visible = false;
+       radioButton2.Visible = false;
+       radioButton1.Visible = false;
+       comboBox1.Visible = false;
+       textBox5.Visible = false;
+       textBox4.Visible = false;
+       textBox3.Visible = false;
+       textBox2.Visible = false;
+       textBox1.Visible = false;
+       label1.Visible = false;
+       label2.Visible = false;
+       label3.Visible = false;
+       label4.Visible = false;
+       label5.Visible = false;
+       label6.Visible = false;
+       comboBox2.Visible = false;
+       label11.Visible = false;
+       textBox11.Visible = false;
+
+
+
+
+
+       string governrate = comboBox1.SelectedItem.ToString();
+       switch (governrate)
+
+       {
+           case "cairo":
+               price = 20;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+           case "Giza":
+               price = 23;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+           case "Qalioubiya":
+               price = 25;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+           case "Baheira":
+               price = 28;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+           case "Gharbiya":
+               price = 32;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+           case "Fayoum":
+               price = 40;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+           case "Sohag":
+               price = 50;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+           case "Qena":
+               price = 55;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+           case "Aswan":
+               price = 60;
+               textBox9.Text = (price + fprice).ToString();
+               break;
+       }
+
+       string Size = comboBox2.SelectedItem.ToString();
+       switch (Size)
+
+       {
+           case "small":
+              
+               textBox9.Text = (price + fprice+ sprice + iprice).ToString();
+               break;
+           case "medium":
+              
+               sprice = 5;
+               textBox9.Text = (price + fprice + sprice + iprice).ToString();
+               break;
+           case "large":
+               sprice = 10;
+               
+               textBox9.Text = (price + fprice + sprice + iprice).ToString();
+               break;
+       }
+       int items = int.Parse(textBox11.Text);
+       if (items >= 5)
+       {
+           iprice = 10;
+       }
+
+
+
+
+   }
+
+   private void radioButton2_CheckedChanged(object sender, EventArgs e)
+   {
+       textBox7.Text = " one day ";
+       fprice = 10;
+   }
+
+   private void radioButton1_CheckedChanged(object sender, EventArgs e)
+   {
+       textBox7.Text = " 3 days ";
+   }
         private void package_click(object sender, EventArgs e)
         {
             filespic.Visible = false;
