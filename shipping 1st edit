@@ -42,6 +42,7 @@ namespace WindowsFormsApp2
                 label2.Size = new Size(0, 0);
                 label2.Location = new Point(0, 0);
                 label3.Size = new Size(0, 0);
+                label3.Text = "";
                 label3.Location = new Point(0, 0);
                 clickhere_button.Size = new Size(0, 0);
                 clickhere_button.Location = new Point(0, 0);
