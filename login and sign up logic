@@ -1,0 +1,29 @@
+ class database
+        {
+            string[] usern = new string[10];
+            string[] userp = new string[10];
+            public database()
+            {
+                usern[0] = "youusef";
+                userp[0] = "123";
+            }
+
+            public int top = 0;
+            public void add(string name, string pass)
+            {
+                ++top;
+                usern[top] = name;
+                userp[top] = pass;
+            }
+            public bool check(string name, string pass)
+            {
+                for (int i = 0; i <= top; i++)
+                {
+                    if (usern[i] == name && userp[i] == pass)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
